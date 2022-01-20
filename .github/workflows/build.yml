@@ -22,8 +22,3 @@ jobs:
         uses: GabrielBB/xvfb-action@v1.5
         with:
           run: mvn clean verify
-      - name: Get log
-        id: vars
-        run: echo ::set-output name=x::$(cat ./org.xtext.example.mydsl1.ui.tests/target/work/data/.metadata/.log)
-      - name: Test output
-        run: echo ${{ steps.vars.outputs.x }}
